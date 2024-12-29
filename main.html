@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Services Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #202124;
+            color: white;
+            font-family: 'Product Sans', Arial, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: colorFlow 8s linear infinite;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #9aa0a6;
+            letter-spacing: 2px;
+        }
+
+        @keyframes colorFlow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .service-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-btn:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .service-btn:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-name {
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .service-btn:hover .service-name {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 72px;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Google</h1>
+        <p>By Giovanni Hady</p>
+    </div>
+
+    <div class="grid-container">
+        <a href="https://gmail.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gmail_48dp.png" alt="Gmail" class="service-icon">
+            <span class="service-name">Gmail</span>
+        </a>
+
+        <a href="https://docs.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/docs_48dp.png" alt="Docs" class="service-icon"  >
+            <span class="service-name">Docs</span>
+        </a>
+
+        <a href="https://slides.google.com" class="service-btn" target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/slides_48dp.png" alt="Slides" class="service-icon"  >
+            <span class="service-name">Slides</span>
+        </a>
+
+        <a href="https://sheets.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/sheets_48dp.png" alt="Sheets" class="service-icon"  >
+            <span class="service-name">Sheets</span>
+        </a>
+
+        <a href="https://keep.google.com" class="service-btn" target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" ="Keep" class="service-icon"  >
+            <span class="service-name">Keep</span>
+        </a>
+
+        <a href="https://drive.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/drive_48dp.png" alt="Drive" class="service-icon"  >
+            <span class="service-name">Drive</span>
+        </a>
+
+        <a href="https://translate.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/translate_48dp.png" alt="Translate" class="service-icon"  >
+            <span class="service-name">Translate</span>
+        </a>
+
+        <a href="https://youtube.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/youtube_48dp.png" alt="YouTube" class="service-icon"  >
+            <span class="service-name">YouTube</span>
+        </a>
+
+        <a href="https://colab.research.google.com/" class="service-btn"  target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/800px-Google_Colaboratory_SVG_Logo.svg.png?20221103151432" alt="Draw" class="service-icon"  >
+            <span class="service-name">Colab</span>
+        </a>
+        
+        <a href="https://forms.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/forms_48dp.png" alt="Forms" class="service-icon"  >
+            <span class="service-name">Forms</span>
+        </a>
+
+        <a href="https://fonts.google.com" class="service-btn"  target="_blank">
+            <img src="https://lh3.googleusercontent.com/6nGdwtbmSCuuGF5fSCqvv0f-GOsp927ZXRFxC1NNEqlH-EwAGEqlHXN2rcarUTB7C8Tj8shbcg-9z-CO4XJGTVSaLbT5FPsq0rKET0ZIfWNsj9_f424=h120" alt="Fonts" class="service-icon"  >
+            <span class="service-name">Fonts</span>
+        </a>
+
+        <a href="https://ai.google.com" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg" alt="Gemini" class="service-icon"  >
+            <span class="service-name">Gemini</span>
+        </a>
+
+        <a href="https://www.google.com/search?q=calculator" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/calculator_48dp.png" alt="Calculator" class="service-icon"  >
+            <span class="service-name">Calculator</span>
+        </a>
+
+
+        <a href="https://chrome.google.com/webstore" class="service-btn"  target="_blank">
+            <img src="https://www.gstatic.com/images/branding/product/1x/chrome_48dp.png" alt="Extensions" class="service-icon"  >
+            <span class="service-name">Extensions</span>
+        </a>
+    </div>
+</body>
+</html>
